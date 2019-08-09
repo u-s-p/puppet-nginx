@@ -19,7 +19,7 @@ server {
     <%- end -%>
   <%- end -%>
 <%# check to see if ipv6 support exists in the kernel before applying -%>
-  <%- if @ipv6_enable && (defined? @ipaddress6) -%>
+  <%- if @ipv6_enable -%>
     <%- if @ipv6_listen_ip.is_a?(Array) then -%>
       <%- @ipv6_listen_ip.each do |ipv6| -%>
   listen [<%= ipv6 %>]:<%= @ipv6_listen_port %> <% if @ipv6_listen_options %><%= @ipv6_listen_options %><% end %>;
@@ -52,7 +52,7 @@ server {
   <%- end -%>
 <%- end -%>
 <%# check to see if ipv6 support exists in the kernel before applying -%>
-<%- if @ipv6_enable && (defined? @ipaddress6) -%>
+<%- if @ipv6_enable -%>
   <%- if @ipv6_listen_ip.is_a?(Array) then -%>
     <%- @ipv6_listen_ip.each do |ipv6| -%>
   listen [<%= ipv6 %>]:<%= @ipv6_listen_port %> <% if @ipv6_listen_options %><%= @ipv6_listen_options %><% end %>;
